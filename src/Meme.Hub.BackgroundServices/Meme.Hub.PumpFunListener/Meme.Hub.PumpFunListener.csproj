@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Meme.Domain.Models" Version="1.0.7" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
+    <PackageReference Include="Meme.Domain.Models" Version="1.0.8" />
   </ItemGroup>
 
 </Project>

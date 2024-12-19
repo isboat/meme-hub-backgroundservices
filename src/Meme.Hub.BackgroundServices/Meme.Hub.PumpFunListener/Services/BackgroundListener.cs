@@ -8,19 +8,16 @@ namespace Meme.Hub.PumpFunListener.Services
     public class BackgroundListener : BackgroundService
     {
         private readonly ILogger<BackgroundListener> _logger;
-        private readonly SolanaDataSourceSettings _solanaDataSourceSettings;
         private readonly MessagingBusSettings _messagingBusSettings;
+        private readonly IPumpPortalClient _pumpPortalClient;
 
         //private readonly IEventBus _eventBus;
 
-        public BackgroundListener(IOptions<SolanaDataSourceSettings> solanaDataSourceSettings,
-            IOptions<MessagingBusSettings> messagingBusSettings,
-                                     //IEventBus eventBus,
-                                     ILogger<BackgroundListener> logger)
+        public BackgroundListener(ILogger<BackgroundListener> logger,
+                                     IPumpPortalClient pumpPortalClient)
         {
             _logger = logger;
-            _solanaDataSourceSettings = solanaDataSourceSettings.Value;
-            _messagingBusSettings = messagingBusSettings.Value;
+            _pumpPortalClient = pumpPortalClient;
         }
 
         protected async override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -32,20 +29,18 @@ namespace Meme.Hub.PumpFunListener.Services
             while (!stoppingToken.IsCancellationRequested)
             {
                 Console.WriteLine("backgroun service is runing");
-                //_logger.LogDebug($"GracePeriod task doing background work.");
-
-                // This eShopOnContainers method is querying a database table
-                // and publishing events into the Event Bus (RabbitMQ / ServiceBus)
-                //CheckConfirmedGracePeriodOrders();
+                await _pumpPortalClient.Get();
 
                 try
                 {
-                   await Task.Delay(500, stoppingToken);
+                    await Task.Delay(50000, stoppingToken);
                 }
                 catch (TaskCanceledException exception)
                 {
+                    Console.WriteLine(exception.Message);
                     //_logger.LogCritical(exception, "TaskCanceledException Error", exception.Message);
                 }
+                catch (Exception exception) { Console.WriteLine(exception.Message); }
             }
 
             //_logger.LogDebug($"GracePeriod background task is stopping.");
