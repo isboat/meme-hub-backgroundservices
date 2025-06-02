@@ -14,13 +14,10 @@ namespace Meme.Hub.PumpFunListener.Services
 
     public class PumpPortalClient: IPumpPortalClient
     {
-        private readonly HttpClient _httpClient;
         private readonly PumpPortalSettings _settings;
         private readonly IServiceBusQueueWriter _serviceBusQueueWriter;
 
-        public PumpPortalClient(IHttpClientFactory httpClientFactory, 
-            IOptions<PumpPortalSettings> settings,
-            [FromKeyedServices("tokencreationrawdata")] IServiceBusQueueWriter serviceBusQueueWriter)
+        public PumpPortalClient(IOptions<PumpPortalSettings> settings, IServiceBusQueueWriter serviceBusQueueWriter)
         {
             _settings = settings.Value;
             _serviceBusQueueWriter = serviceBusQueueWriter;
