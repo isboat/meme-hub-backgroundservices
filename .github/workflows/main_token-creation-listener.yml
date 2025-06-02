@@ -27,7 +27,7 @@ jobs:
         run: dotnet build src/Meme.Hub.BackgroundServices/Meme.Hub.BackgroundServices.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish src/Meme.Hub.BackgroundServices/Meme.Hub.BackgroundServices.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
