@@ -25,6 +25,8 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build src/Meme.Hub.BackgroundServices/Meme.Hub.BackgroundServices.sln --configuration Release
+        env:
+          NuGetPackageSourceCredentials_github: Username=${{ github.actor }};Password=${{ secrets.GITHUB_TOKEN }}
 
       - name: dotnet publish
         run: dotnet publish src/Meme.Hub.BackgroundServices/Meme.Hub.BackgroundServices.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
