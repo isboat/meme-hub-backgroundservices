@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meme.Hub.PumpFunListener", "Meme.Hub.PumpFunListener\Meme.Hub.PumpFunListener.csproj", "{14791521-50E7-49D7-8B58-083EC36C9397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meme.Hub.TokenCreationListenerWebJob", "Meme.Hub.TokenCreationListenerWebJob\Meme.Hub.TokenCreationListenerWebJob.csproj", "{5A1959D6-0EDB-40AA-B673-B473AF552606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meme.Hub.TokenRawDataProcessor.WebJob", "Meme.Hub.TokenRawDataProcessor.WebJob\Meme.Hub.TokenRawDataProcessor.WebJob.csproj", "{1230C6AF-2A30-4DD4-9BC6-90C3FFB0A7C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meme.Hub.WebJob.Common", "Meme.Hub.WebJob.Common\Meme.Hub.WebJob.Common.csproj", "{F31A11DD-2C67-4A35-AB33-5D4B343D63EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{14791521-50E7-49D7-8B58-083EC36C9397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14791521-50E7-49D7-8B58-083EC36C9397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14791521-50E7-49D7-8B58-083EC36C9397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A1959D6-0EDB-40AA-B673-B473AF552606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1959D6-0EDB-40AA-B673-B473AF552606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A1959D6-0EDB-40AA-B673-B473AF552606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A1959D6-0EDB-40AA-B673-B473AF552606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1230C6AF-2A30-4DD4-9BC6-90C3FFB0A7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1230C6AF-2A30-4DD4-9BC6-90C3FFB0A7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1230C6AF-2A30-4DD4-9BC6-90C3FFB0A7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1230C6AF-2A30-4DD4-9BC6-90C3FFB0A7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31A11DD-2C67-4A35-AB33-5D4B343D63EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31A11DD-2C67-4A35-AB33-5D4B343D63EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31A11DD-2C67-4A35-AB33-5D4B343D63EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31A11DD-2C67-4A35-AB33-5D4B343D63EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
