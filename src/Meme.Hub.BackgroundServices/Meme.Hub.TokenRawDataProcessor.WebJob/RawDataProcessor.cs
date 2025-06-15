@@ -38,8 +38,7 @@ namespace Meme.Hub.TokenRawDataProcessor.WebJob
             }
 
             tokenData.RawData = rawDataModel;
-            var serialized = JsonConvert.SerializeObject(tokenData);
-            await _cacheService.AddItemToList(serialized, TimeSpan.FromMinutes(30));
+            await _cacheService.AddItemToList(tokenData, TimeSpan.FromMinutes(30));
         }
     }
 }
